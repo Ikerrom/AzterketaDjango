@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alokairua</title>
+</head>
+<body>
+    <h1>Kotxeak</h1>
+
+    <table border="1">
+        <tr>
+            <td>ID</td>
+            <td>ALOKATZAILEA</td>
+            <td>HASIERA DATA</td>
+            <td>BUKAERA DATA</td>
+            <td>ALOKATUA</td>
+        </tr>
+        {% for x in kotxeak %}
+        <tr>
+            <td>{{ x.id }}</td>
+            <td>{{ x.pertsona.firstname }} {{ x.pertsona.lastname }}</td>
+            <td>{{ x.hasieradata }}</td>
+            <td>{{ x.bukaeradata }}</td>
+            <td>{{ x.alokatua }}</td>
+            <td><a href="/delkotxea/{{x.id}}">DELETE</a></td>
+            <td><a href="/updatekotxea/{{x.id}}">UPDATE</a></td>
+        </tr>
+        {% endfor %}
+        <a href="/addkotxeatodb">ADD KOTXEA</a>
+    </table> 
+    <br>
+    <a href="/">INDEX</a>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alokairua</title>
+</head>
+<body>
+    <h1>Pertsonak</h1>
+
+    <table border="1">
+        <tr>
+            <td>IZENA</td>
+            <td>ABIZENA</td>
+        </tr>
+        {% for x in pertsonak %}
+        <tr>
+            <td>{{ x.firstname }}</td>
+            <td>{{ x.lastname }}</td>
+            <td><a href="/delpertsona/{{x.id}}">DELETE</a></td>
+            <td><a href="/updatepertsona/{{x.id}}">UPDATE</a></td>
+        </tr>
+        {% endfor %}
+        <a href="/addpertsona">ADD PERTSONA</a>
+    </table> 
+    <br>
+    <a href="/">INDEX</a>
+</body>
+</html>

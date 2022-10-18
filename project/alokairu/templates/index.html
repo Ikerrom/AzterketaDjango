@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alokairua</title>
+</head>
+<body>
+
+<h1>Kotxe alokairua</h1>
+<a href="kotxeak/">Kotxeak kudeatu</a>
+<br>
+<br>
+<a href="pertsonak/">Pertsonak kudeatu</a>
+
+<h1>Alokatuak</h1>
+<table border="1">
+    <tr>
+        <td>ID</td>
+        <td>ALOKATZAILEA</td>
+        <td>HASIERA DATA</td>
+        <td>BUKAERA DATA</td>
+    </tr>
+    {% for x in kotxealokatuatrue %}
+    <tr>
+        <td>Kotxe {{ x.id }}</td>
+        <td>{{ x.pertsona.firstname }} {{ x.pertsona.lastname }}</td>
+        <td>{{ x.hasieradata }}</td>
+        <td>{{ x.bukaeradata }}</td>
+    </tr>
+    {% endfor %}
+</table>
+<br>
+
+<h1>Alokatu Gabeak</h1>
+<table border="1">
+    <tr>
+        <td>ID</td>
+    </tr>
+    {% for x in kotxealokatuafalse %}
+    <tr>
+        <td>Kotxe {{ x.id }}</td>
+        <td><a href="/alokatu/{{x.id}}">ALOKATU</a></td>
+    </tr>
+    {% endfor %}
+</table> 
+</body>
+</html>

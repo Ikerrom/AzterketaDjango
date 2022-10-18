@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alokairua</title>
+</head>
+
+<body>
+    <h1>Alokatu</h1>
+    <form action="alokatuondb/{{kotxea.id}}" method="post">
+        <div style="display:flex; flex-direction:column;">
+
+            <label for="inputhasieradata">Hasieradata</label>
+            <input type="text" id="inputhasieradata" placeholder="__/__/____" name="hasieradata" value="{{kotxea.hasieradata}}">
+
+            <label for="inputbukaeradata">Hasieradata</label>
+            <input type="text" id="inputbukaeradata" placeholder="__/__/____" name="bukaeradata" value="{{kotxea.bukaeradata}}">
+
+            <label for="selectpertsona">Pertsona</label>
+            <select id="selectpertsona" name="pertsona">
+                {% for x in pertsonak %}
+                        <option value="{{ x.id }}">{{ x.firstname }} {{ x.lastname }}</option>
+                {% endfor %}
+                <option value ="">Ez daude pertsonak</option>
+            </select>
+            <a href="/addpertsona">Ez zaude?</a>
+
+            <input type="submit" value="Submit">
+        </div>
+    </form>
+    <br>
+    <a href="/">BACK</a>
+</body>
+
+</html>

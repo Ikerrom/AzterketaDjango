@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alokairua</title>
+</head>
+<body>
+    <h1>Aldatu {{pertsona.firstname}} {{pertsona.lastname}}</h1>
+    <form action="updatepertsonaondb/{{pertsona.id}}" method="post">
+        <div style="display:flex; flex-direction:column;">
+
+            <label for="inputfirstname">Izena</label>
+            <input type="text" id="inputfirstname" placeholder="Izena" name="firstname" value ="{{pertsona.firstname}}">
+        
+            <label for="inputlastname">Abizena</label>
+            <input type="text" id="inputlastname" placeholder="Abizena" name="lastname" value = "{{pertsona.lastname}}">
+
+            <input type="submit" value="Submit">
+        </div>
+    </form>
+    <br>
+    <a href="../pertsonak/">BACK</a>
+</body>
+</html>
